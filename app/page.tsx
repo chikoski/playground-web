@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Home() {
   const [count, setCount] = useState(0);
@@ -14,9 +14,11 @@ export default function Home() {
     window.close()
   }
 
-  window.addEventListener("resize", () => {
-    window.close()
-  });
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      window.close()
+    });
+  })
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
